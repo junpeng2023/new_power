@@ -1,0 +1,1228 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= nom_ff_n40C_1v95 Corner ===================================
+
+Startpoint: merge878 (positive level-sensitive latch clocked by clk)
+Endpoint: merge907 (recovery check against falling-edge clock clk)
+Path Group: asynchronous
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+   115    0.256522    0.863557    0.598670    0.598670 ^ clk (in)
+                                                         clk (net)
+                                  3.757987    3.757987   time given to startpoint
+                      0.026073    0.000000    3.757987 v merge878/D (sky130_fd_sc_hd__dlrtp_1)
+     4    0.019766    0.069125    0.192259    3.950247 v merge878/Q (sky130_fd_sc_hd__dlrtp_1)
+                                                         net746 (net)
+                      0.069125    0.000000    3.950247 v c674/A (sky130_fd_sc_hd__dlygate4sd1_1)
+     6    0.017165    0.064984    0.198944    4.149191 v c674/X (sky130_fd_sc_hd__dlygate4sd1_1)
+                                                         net556 (net)
+                      0.064984    0.000000    4.149191 v c691/A2 (sky130_fd_sc_hd__a21bo_2)
+     3    0.007114    0.034199    0.153595    4.302786 v c691/X (sky130_fd_sc_hd__a21bo_2)
+                                                         net575 (net)
+                      0.034199    0.000000    4.302786 v c703/A2 (sky130_fd_sc_hd__a41oi_1)
+     6    0.043729    0.733570    0.568554    4.871339 ^ c703/Y (sky130_fd_sc_hd__a41oi_1)
+                                                         out4 (net)
+                      0.733570    0.000000    4.871339 ^ c732/A2 (sky130_fd_sc_hd__a41o_2)
+    10    0.069380    0.252870    0.308773    5.180112 ^ c732/X (sky130_fd_sc_hd__a41o_2)
+                                                         out10 (net)
+                      0.252870    0.000000    5.180112 ^ c748/S0 (sky130_fd_sc_hd__mux4_2)
+     1    0.007716    0.070872    0.324813    5.504925 v c748/X (sky130_fd_sc_hd__mux4_2)
+                                                         net632 (net)
+                      0.070872    0.000000    5.504925 v merge844/B (sky130_fd_sc_hd__xor2_2)
+     1    0.008409    0.116027    0.121850    5.626775 ^ merge844/X (sky130_fd_sc_hd__xor2_2)
+                                                         net708 (net)
+                      0.116027    0.000000    5.626775 ^ merge862/B (sky130_fd_sc_hd__xor2_2)
+     1    0.002596    0.068725    0.080540    5.707315 ^ merge862/X (sky130_fd_sc_hd__xor2_2)
+                                                         net727 (net)
+                      0.068725    0.000000    5.707315 ^ merge907/RESET_B (sky130_fd_sc_hd__dlrbp_2)
+                                              5.707315   data arrival time
+
+                      0.150000    4.000000    4.000000   clock clk (fall edge)
+                                  0.000000    4.000000   clock network delay (ideal)
+                                 -0.250000    3.750000   clock uncertainty
+                                  0.000000    3.750000   clock reconvergence pessimism
+                                              3.750000 v merge907/GATE (sky130_fd_sc_hd__dlrbp_2)
+                                  0.048603    3.798602   library recovery time
+                                              3.798602   data required time
+---------------------------------------------------------------------------------------------
+                                              3.798602   data required time
+                                             -5.707315   data arrival time
+---------------------------------------------------------------------------------------------
+                                             -1.908712   slack (VIOLATED)
+
+
+Startpoint: s930 (negative level-sensitive latch clocked by clk)
+Endpoint: c707 (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    4.000000    4.000000   clock clk (fall edge)
+                                  0.000000    4.000000   clock network delay (ideal)
+   115    0.234125    0.344899    0.259942    4.259943 v clk (in)
+                                                         clk (net)
+                                  3.657615    7.657615   time given to startpoint
+                      0.058118    0.000000    7.657615 v s930/D (sky130_fd_sc_hd__dlxbn_2)
+     5    0.012850    0.034068    0.283944    7.941559 v s930/Q_N (sky130_fd_sc_hd__dlxbn_2)
+                                                         net799 (net)
+                      0.034068    0.000000    7.941559 v c444/B1 (sky130_fd_sc_hd__a41oi_1)
+     7    0.017292    0.330550    0.144388    8.085946 ^ c444/Y (sky130_fd_sc_hd__a41oi_1)
+                                                         net373 (net)
+                      0.330550    0.000000    8.085946 ^ c707/RESET_B (sky130_fd_sc_hd__sdfbbn_1)
+                                              8.085946   data arrival time
+
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                 -0.250000   -0.250000   clock uncertainty
+                                  0.000000   -0.250000   clock reconvergence pessimism
+                                             -0.250000 ^ c707/SET_B (sky130_fd_sc_hd__sdfbbn_1)
+                                  0.106049   -0.143951   library non-sequential setup time
+                                             -0.143951   data required time
+---------------------------------------------------------------------------------------------
+                                             -0.143951   data required time
+                                             -8.085946   data arrival time
+---------------------------------------------------------------------------------------------
+                                             -8.229897   slack (VIOLATED)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= nom_ff_n40C_1v95 Corner ===================================
+
+Startpoint: merge878 (positive level-sensitive latch clocked by clk)
+Endpoint: merge907 (recovery check against falling-edge clock clk)
+Path Group: asynchronous
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+   115    0.256522    0.863557    0.598670    0.598670 ^ clk (in)
+                                                         clk (net)
+                                  3.757987    3.757987   time given to startpoint
+                      0.026073    0.000000    3.757987 v merge878/D (sky130_fd_sc_hd__dlrtp_1)
+     4    0.019766    0.069125    0.192259    3.950247 v merge878/Q (sky130_fd_sc_hd__dlrtp_1)
+                                                         net746 (net)
+                      0.069125    0.000000    3.950247 v c674/A (sky130_fd_sc_hd__dlygate4sd1_1)
+     6    0.017165    0.064984    0.198944    4.149191 v c674/X (sky130_fd_sc_hd__dlygate4sd1_1)
+                                                         net556 (net)
+                      0.064984    0.000000    4.149191 v c691/A2 (sky130_fd_sc_hd__a21bo_2)
+     3    0.007114    0.034199    0.153595    4.302786 v c691/X (sky130_fd_sc_hd__a21bo_2)
+                                                         net575 (net)
+                      0.034199    0.000000    4.302786 v c703/A2 (sky130_fd_sc_hd__a41oi_1)
+     6    0.043729    0.733570    0.568554    4.871339 ^ c703/Y (sky130_fd_sc_hd__a41oi_1)
+                                                         out4 (net)
+                      0.733570    0.000000    4.871339 ^ c732/A2 (sky130_fd_sc_hd__a41o_2)
+    10    0.069380    0.252870    0.308773    5.180112 ^ c732/X (sky130_fd_sc_hd__a41o_2)
+                                                         out10 (net)
+                      0.252870    0.000000    5.180112 ^ c748/S0 (sky130_fd_sc_hd__mux4_2)
+     1    0.007716    0.070872    0.324813    5.504925 v c748/X (sky130_fd_sc_hd__mux4_2)
+                                                         net632 (net)
+                      0.070872    0.000000    5.504925 v merge844/B (sky130_fd_sc_hd__xor2_2)
+     1    0.008409    0.116027    0.121850    5.626775 ^ merge844/X (sky130_fd_sc_hd__xor2_2)
+                                                         net708 (net)
+                      0.116027    0.000000    5.626775 ^ merge862/B (sky130_fd_sc_hd__xor2_2)
+     1    0.002596    0.068725    0.080540    5.707315 ^ merge862/X (sky130_fd_sc_hd__xor2_2)
+                                                         net727 (net)
+                      0.068725    0.000000    5.707315 ^ merge907/RESET_B (sky130_fd_sc_hd__dlrbp_2)
+                                              5.707315   data arrival time
+
+                      0.150000    4.000000    4.000000   clock clk (fall edge)
+                                  0.000000    4.000000   clock network delay (ideal)
+                                 -0.250000    3.750000   clock uncertainty
+                                  0.000000    3.750000   clock reconvergence pessimism
+                                              3.750000 v merge907/GATE (sky130_fd_sc_hd__dlrbp_2)
+                                  0.048603    3.798602   library recovery time
+                                              3.798602   data required time
+---------------------------------------------------------------------------------------------
+                                              3.798602   data required time
+                                             -5.707315   data arrival time
+---------------------------------------------------------------------------------------------
+                                             -1.908712   slack (VIOLATED)
+
+
+Startpoint: s930 (negative level-sensitive latch clocked by clk)
+Endpoint: c707 (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.150000    4.000000    4.000000   clock clk (fall edge)
+                                  0.000000    4.000000   clock network delay (ideal)
+   115    0.234125    0.344899    0.259942    4.259943 v clk (in)
+                                                         clk (net)
+                                  3.657615    7.657615   time given to startpoint
+                      0.058118    0.000000    7.657615 v s930/D (sky130_fd_sc_hd__dlxbn_2)
+     5    0.012850    0.034068    0.283944    7.941559 v s930/Q_N (sky130_fd_sc_hd__dlxbn_2)
+                                                         net799 (net)
+                      0.034068    0.000000    7.941559 v c444/B1 (sky130_fd_sc_hd__a41oi_1)
+     7    0.017292    0.330550    0.144388    8.085946 ^ c444/Y (sky130_fd_sc_hd__a41oi_1)
+                                                         net373 (net)
+                      0.330550    0.000000    8.085946 ^ c707/RESET_B (sky130_fd_sc_hd__sdfbbn_1)
+                                              8.085946   data arrival time
+
+                      0.150000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                 -0.250000   -0.250000   clock uncertainty
+                                  0.000000   -0.250000   clock reconvergence pessimism
+                                             -0.250000 ^ c707/SET_B (sky130_fd_sc_hd__sdfbbn_1)
+                                  0.106049   -0.143951   library non-sequential setup time
+                                             -0.143951   data required time
+---------------------------------------------------------------------------------------------
+                                             -0.143951   data required time
+                                             -8.085946   data arrival time
+---------------------------------------------------------------------------------------------
+                                             -8.229897   slack (VIOLATED)
+
+
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= nom_ff_n40C_1v95 Corner ===================================
+
+max slew
+
+Pin                                        Limit        Slew       Slack
+------------------------------------------------------------------------
+out8                                    0.750000    1.224152   -0.474152 (VIOLATED)
+c294/Y                                  0.750000    1.224152   -0.474152 (VIOLATED)
+c298/B                                  0.750000    1.224152   -0.474152 (VIOLATED)
+c299/B1                                 0.750000    1.224152   -0.474152 (VIOLATED)
+c301/S                                  0.750000    1.224152   -0.474152 (VIOLATED)
+c305/SCE                                0.750000    1.224152   -0.474152 (VIOLATED)
+c306/A2                                 0.750000    1.224152   -0.474152 (VIOLATED)
+c347/A3                                 0.750000    1.224152   -0.474152 (VIOLATED)
+c486/A4                                 0.750000    1.224152   -0.474152 (VIOLATED)
+c567/B1                                 0.750000    1.224152   -0.474152 (VIOLATED)
+c619/A1                                 0.750000    1.224152   -0.474152 (VIOLATED)
+c700/A4                                 0.750000    1.224152   -0.474152 (VIOLATED)
+c755/A1                                 0.750000    1.224152   -0.474152 (VIOLATED)
+c760/A0                                 0.750000    1.224152   -0.474152 (VIOLATED)
+out7                                    0.750000    0.841162   -0.091162 (VIOLATED)
+c443/Y                                  0.750000    0.841162   -0.091162 (VIOLATED)
+c451/A4                                 0.750000    0.841162   -0.091162 (VIOLATED)
+c457/A2                                 0.750000    0.841162   -0.091162 (VIOLATED)
+c593/A3                                 0.750000    0.841162   -0.091162 (VIOLATED)
+c629/A3                                 0.750000    0.841162   -0.091162 (VIOLATED)
+c706/A0                                 0.750000    0.841162   -0.091162 (VIOLATED)
+c749/A2                                 0.750000    0.841162   -0.091162 (VIOLATED)
+c752/A3                                 0.750000    0.841162   -0.091162 (VIOLATED)
+c759/A0                                 0.750000    0.841162   -0.091162 (VIOLATED)
+c665/Y                                  0.750000    0.814136   -0.064136 (VIOLATED)
+c668/A                                  0.750000    0.814136   -0.064136 (VIOLATED)
+c669/B                                  0.750000    0.814136   -0.064136 (VIOLATED)
+c671/A2                                 0.750000    0.814136   -0.064136 (VIOLATED)
+c708/A2                                 0.750000    0.814136   -0.064136 (VIOLATED)
+c716/A2                                 0.750000    0.814136   -0.064136 (VIOLATED)
+
+max fanout
+
+Pin                                   Limit Fanout  Slack
+---------------------------------------------------------
+c556/Y                                   10     20    -10 (VIOLATED)
+c548/X                                   10     19     -9 (VIOLATED)
+c171/X                                   10     18     -8 (VIOLATED)
+in33                                     10     13     -3 (VIOLATED)
+in42                                     10     13     -3 (VIOLATED)
+c364/Q_N                                 10     13     -3 (VIOLATED)
+c401/X                                   10     13     -3 (VIOLATED)
+in39                                     10     12     -2 (VIOLATED)
+c133/X                                   10     12     -2 (VIOLATED)
+c146/Y                                   10     12     -2 (VIOLATED)
+c294/Y                                   10     12     -2 (VIOLATED)
+c364/Q                                   10     12     -2 (VIOLATED)
+c418/Y                                   10     12     -2 (VIOLATED)
+c529/Y                                   10     12     -2 (VIOLATED)
+c69/Y                                    10     12     -2 (VIOLATED)
+in13                                     10     11        (VIOLATED)
+c168/Y                                   10     11        (VIOLATED)
+c176/Y                                   10     11        (VIOLATED)
+c193/X                                   10     11        (VIOLATED)
+c194/X                                   10     11        (VIOLATED)
+c319/X                                   10     11        (VIOLATED)
+
+
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 947 unannotated drivers.
+ clk
+ in0
+ in1
+ in10
+ in11
+ in12
+ in13
+ in14
+ in15
+ in16
+ in17
+ in18
+ in19
+ in2
+ in20
+ in21
+ in22
+ in23
+ in24
+ in25
+ in26
+ in27
+ in28
+ in29
+ in3
+ in30
+ in31
+ in32
+ in33
+ in34
+ in35
+ in36
+ in37
+ in38
+ in39
+ in4
+ in40
+ in41
+ in42
+ in43
+ in44
+ in45
+ in46
+ in47
+ in48
+ in49
+ in5
+ in50
+ in51
+ in52
+ in53
+ in54
+ in55
+ in56
+ in57
+ in58
+ in59
+ in6
+ in60
+ in61
+ in7
+ in8
+ in9
+ rst
+ c100/Y
+ c101/X
+ c102/X
+ c103/X
+ c104/X
+ c105/Y
+ c106/X
+ c107/X
+ c108/X
+ c109/Y
+ c110/Y
+ c111/Y
+ c112/X
+ c113/Y
+ c114/X
+ c115/Y
+ c116/Y
+ c117/X
+ c118/Y
+ c119/X
+ c120/X
+ c121/X
+ c122/X
+ c123/Y
+ c124/Y
+ c125/X
+ c126/X
+ c127/X
+ c128/X
+ c129/X
+ c130/Y
+ c131/Y
+ c132/X
+ c133/X
+ c134/X
+ c135/Y
+ c136/X
+ c137/X
+ c138/Y
+ c139/X
+ c140/Y
+ c141/X
+ c142/Y
+ c143/Y
+ c144/X
+ c145/X
+ c146/Y
+ c147/X
+ c148/X
+ c149/X
+ c150/X
+ c151/X
+ c152/X
+ c153/X
+ c154/X
+ c155/Y
+ c156/X
+ c157/Y
+ c158/X
+ c159/Y
+ c160/X
+ c161/X
+ c162/Y
+ c163/X
+ c164/X
+ c165/X
+ c166/X
+ c167/Y
+ c168/Y
+ c169/X
+ c170/X
+ c171/X
+ c172/X
+ c173/X
+ c174/X
+ c175/X
+ c176/Y
+ c177/X
+ c178/X
+ c179/X
+ c180/X
+ c181/Y
+ c182/X
+ c183/X
+ c184/Y
+ c185/X
+ c186/X
+ c187/X
+ c188/X
+ c189/Y
+ c190/X
+ c191/X
+ c192/X
+ c193/X
+ c194/X
+ c195/X
+ c196/Y
+ c197/X
+ c198/X
+ c199/Y
+ c200/X
+ c201/X
+ c202/Y
+ c203/Y
+ c204/Y
+ c205/X
+ c206/X
+ c207/Q
+ c207/Q_N
+ c208/Y
+ c209/Y
+ c210/X
+ c211/X
+ c212/X
+ c213/X
+ c214/X
+ c215/Y
+ c216/X
+ c217/X
+ c218/X
+ c219/Y
+ c220/Y
+ c221/X
+ c222/Y
+ c223/X
+ c224/X
+ c225/Y
+ c226/Y
+ c227/Y
+ c228/X
+ c229/Y
+ c230/X
+ c231/Y
+ c232/X
+ c233/X
+ c234/X
+ c235/Y
+ c236/X
+ c237/X
+ c238/X
+ c239/X
+ c240/X
+ c241/Q
+ c241/Q_N
+ c242/Y
+ c243/Y
+ c244/X
+ c245/X
+ c246/Y
+ c247/Y
+ c248/X
+ c249/X
+ c250/Y
+ c251/Y
+ c252/Y
+ c253/Y
+ c254/X
+ c255/X
+ c256/X
+ c257/Q
+ c257/Q_N
+ c258/X
+ c259/Y
+ c260/X
+ c261/X
+ c262/Q
+ c262/Q_N
+ c263/X
+ c264/X
+ c265/Y
+ c266/X
+ c267/X
+ c268/Y
+ c269/X
+ c270/X
+ c271/Y
+ c272/Y
+ c273/X
+ c274/Y
+ c275/X
+ c276/X
+ c277/Y
+ c278/Y
+ c279/X
+ c280/X
+ c281/Y
+ c282/X
+ c283/X
+ c284/Y
+ c285/X
+ c286/Y
+ c287/Y
+ c288/Y
+ c289/Y
+ c290/Y
+ c291/X
+ c292/X
+ c293/X
+ c294/Y
+ c295/X
+ c296/X
+ c297/Q
+ c297/Q_N
+ c298/X
+ c299/Y
+ c300/X
+ c301/X
+ c302/X
+ c303/Y
+ c304/X
+ c305/Q
+ c305/Q_N
+ c306/Y
+ c307/X
+ c308/Y
+ c309/X
+ c310/X
+ c311/Y
+ c312/Y
+ c313/Y
+ c314/Y
+ c315/Y
+ c316/X
+ c317/X
+ c318/X
+ c319/X
+ c320/Y
+ c321/X
+ c322/X
+ c323/X
+ c324/Y
+ c325/X
+ c326/X
+ c327/X
+ c328/Y
+ c329/Q
+ c329/Q_N
+ c330/X
+ c331/Y
+ c332/X
+ c333/Q
+ c333/Q_N
+ c334/Q
+ c334/Q_N
+ c335/X
+ c336/X
+ c337/X
+ c338/X
+ c339/Y
+ c340/Y
+ c341/Y
+ c342/Y
+ c343/X
+ c344/X
+ c345/X
+ c346/Y
+ c347/X
+ c348/X
+ c349/X
+ c350/X
+ c351/X
+ c352/X
+ c353/X
+ c354/X
+ c355/X
+ c356/X
+ c357/X
+ c358/Y
+ c359/Q
+ c359/Q_N
+ c360/X
+ c361/X
+ c362/X
+ c363/X
+ c364/Q
+ c364/Q_N
+ c365/Y
+ c366/X
+ c367/X
+ c368/X
+ c369/Y
+ c370/X
+ c371/X
+ c372/Y
+ c373/X
+ c374/X
+ c375/X
+ c376/Y
+ c377/Y
+ c378/X
+ c379/X
+ c380/X
+ c381/Y
+ c382/X
+ c383/X
+ c384/X
+ c385/X
+ c386/Y
+ c387/Y
+ c388/X
+ c389/X
+ c390/X
+ c391/Y
+ c392/Y
+ c393/X
+ c394/X
+ c395/Y
+ c396/Y
+ c397/Y
+ c398/X
+ c399/Y
+ c400/Y
+ c401/X
+ c402/Y
+ c403/X
+ c404/Y
+ c405/Y
+ c406/X
+ c407/X
+ c408/X
+ c409/X
+ c410/Y
+ c411/Y
+ c412/Y
+ c413/X
+ c414/Q
+ c414/Q_N
+ c415/X
+ c416/X
+ c417/Y
+ c418/Y
+ c419/Y
+ c420/Q
+ c420/Q_N
+ c421/X
+ c422/Y
+ c423/Y
+ c424/X
+ c425/X
+ c426/X
+ c427/Y
+ c428/X
+ c429/X
+ c430/Y
+ c431/Y
+ c432/Q
+ c433/X
+ c434/Y
+ c435/X
+ c436/X
+ c437/X
+ c438/Y
+ c439/X
+ c440/Y
+ c441/Y
+ c442/Y
+ c443/Y
+ c444/Y
+ c445/X
+ c446/Y
+ c447/X
+ c448/Y
+ c449/X
+ c450/X
+ c451/Y
+ c452/X
+ c453/X
+ c454/X
+ c455/X
+ c456/X
+ c457/X
+ c458/X
+ c459/X
+ c460/X
+ c461/X
+ c462/Q
+ c462/Q_N
+ c463/Y
+ c464/X
+ c465/Y
+ c466/X
+ c467/Y
+ c468/X
+ c469/Q
+ c469/Q_N
+ c470/Y
+ c471/X
+ c472/X
+ c473/X
+ c474/X
+ c475/Y
+ c476/X
+ c477/X
+ c478/Y
+ c479/Y
+ c480/Y
+ c481/X
+ c482/X
+ c483/Y
+ c484/Y
+ c485/Y
+ c486/X
+ c487/X
+ c488/X
+ c489/X
+ c490/X
+ c491/X
+ c492/Y
+ c493/X
+ c494/X
+ c495/Y
+ c496/X
+ c497/X
+ c498/X
+ c499/X
+ c500/X
+ c501/Y
+ c502/X
+ c503/Y
+ c504/Y
+ c505/Y
+ c526/X
+ c527/X
+ c528/Y
+ c529/Y
+ c530/X
+ c531/X
+ c532/Y
+ c533/Y
+ c534/Y
+ c535/X
+ c536/Y
+ c537/X
+ c538/X
+ c539/X
+ c540/X
+ c541/X
+ c542/X
+ c543/Y
+ c544/X
+ c545/X
+ c546/Y
+ c547/X
+ c548/X
+ c549/X
+ c550/Y
+ c551/Y
+ c552/X
+ c553/X
+ c554/X
+ c555/Y
+ c556/Y
+ c557/Y
+ c558/Y
+ c559/X
+ c560/Y
+ c561/Y
+ c562/Y
+ c563/Y
+ c564/X
+ c565/X
+ c566/X
+ c567/X
+ c568/X
+ c569/X
+ c570/X
+ c571/X
+ c572/Y
+ c573/Y
+ c574/Y
+ c575/X
+ c576/X
+ c577/Y
+ c578/Q
+ c579/X
+ c580/Q
+ c580/Q_N
+ c581/X
+ c582/X
+ c583/Y
+ c584/Q
+ c585/Y
+ c586/Y
+ c587/X
+ c588/X
+ c589/Q
+ c590/Y
+ c591/X
+ c592/Y
+ c593/X
+ c594/X
+ c595/Y
+ c596/Y
+ c597/Y
+ c598/Q
+ c598/Q_N
+ c599/Y
+ c600/Y
+ c601/X
+ c602/X
+ c603/Y
+ c604/X
+ c605/Y
+ c606/Y
+ c607/Y
+ c608/X
+ c609/Q
+ c609/Q_N
+ c610/Q
+ c610/Q_N
+ c611/X
+ c612/X
+ c613/X
+ c614/Y
+ c615/X
+ c616/Q
+ c616/Q_N
+ c617/X
+ c618/X
+ c619/X
+ c62/X
+ c620/X
+ c621/X
+ c622/X
+ c623/X
+ c624/X
+ c625/Y
+ c626/X
+ c627/X
+ c628/X
+ c629/X
+ c63/X
+ c630/X
+ c631/X
+ c632/X
+ c633/X
+ c634/Y
+ c635/X
+ c636/X
+ c637/X
+ c64/X
+ c65/X
+ c66/Y
+ c660/X
+ c661/X
+ c662/Y
+ c663/Y
+ c664/Y
+ c665/Y
+ c666/X
+ c667/Y
+ c668/Y
+ c669/Y
+ c67/X
+ c670/X
+ c671/Y
+ c672/X
+ c673/X
+ c674/X
+ c675/X
+ c676/Y
+ c677/Y
+ c678/X
+ c679/Y
+ c68/X
+ c680/X
+ c681/X
+ c682/Q
+ c682/Q_N
+ c683/Y
+ c684/X
+ c685/Y
+ c686/Q
+ c686/Q_N
+ c687/Y
+ c688/X
+ c689/X
+ c69/Y
+ c690/X
+ c691/X
+ c692/Y
+ c693/X
+ c694/X
+ c695/Y
+ c696/X
+ c697/X
+ c698/X
+ c699/X
+ c70/Y
+ c700/Y
+ c701/X
+ c702/X
+ c703/Y
+ c704/X
+ c705/X
+ c706/X
+ c707/Q
+ c707/Q_N
+ c708/Y
+ c709/Q
+ c709/Q_N
+ c71/X
+ c710/X
+ c711/X
+ c712/Y
+ c713/X
+ c714/X
+ c715/X
+ c716/Y
+ c717/Y
+ c718/Y
+ c719/X
+ c72/Y
+ c720/X
+ c721/X
+ c722/X
+ c723/X
+ c724/X
+ c725/X
+ c726/X
+ c727/X
+ c728/X
+ c729/X
+ c73/X
+ c730/X
+ c731/Q
+ c732/X
+ c733/Y
+ c734/X
+ c735/X
+ c736/Y
+ c737/Q
+ c737/Q_N
+ c738/Y
+ c739/X
+ c74/X
+ c740/X
+ c741/X
+ c742/X
+ c743/X
+ c744/Y
+ c745/Y
+ c746/X
+ c747/X
+ c748/X
+ c749/X
+ c75/Y
+ c750/X
+ c751/X
+ c752/X
+ c753/X
+ c754/X
+ c755/X
+ c756/X
+ c757/X
+ c758/X
+ c759/X
+ c76/X
+ c760/X
+ c761/X
+ c762/X
+ c763/X
+ c764/X
+ c765/X
+ c766/X
+ c767/X
+ c768/X
+ c769/X
+ c77/X
+ c78/X
+ c79/Y
+ c80/Y
+ c81/Y
+ c82/X
+ c83/X
+ c84/X
+ c85/X
+ c86/X
+ c87/X
+ c88/Y
+ c89/X
+ c90/Y
+ c91/Y
+ c92/X
+ c93/Y
+ c94/X
+ c95/X
+ c96/X
+ c97/Y
+ c98/X
+ c99/Y
+ merge790/Y
+ merge791/X
+ merge792/Y
+ merge793/X
+ merge794/X
+ merge795/X
+ merge796/X
+ merge797/X
+ merge798/X
+ merge799/Y
+ merge800/X
+ merge801/X
+ merge802/Y
+ merge803/Y
+ merge804/X
+ merge805/X
+ merge806/X
+ merge807/Y
+ merge808/Y
+ merge809/X
+ merge810/X
+ merge811/X
+ merge812/X
+ merge813/X
+ merge814/X
+ merge815/X
+ merge816/X
+ merge817/X
+ merge818/X
+ merge819/X
+ merge820/X
+ merge821/X
+ merge822/X
+ merge823/X
+ merge824/X
+ merge825/X
+ merge826/Y
+ merge827/X
+ merge828/X
+ merge829/X
+ merge830/Q
+ merge830/Q_N
+ merge831/X
+ merge832/Q
+ merge832/Q_N
+ merge833/Y
+ merge834/Y
+ merge835/Y
+ merge836/X
+ merge837/X
+ merge838/Q
+ merge839/Q
+ merge840/Y
+ merge841/X
+ merge842/X
+ merge843/X
+ merge844/X
+ merge845/Y
+ merge846/X
+ merge847/Y
+ merge848/Y
+ merge849/X
+ merge850/Y
+ merge851/Y
+ merge852/X
+ merge853/Y
+ merge854/Q
+ merge855/Q
+ merge856/X
+ merge857/Q
+ merge857/Q_N
+ merge858/Y
+ merge859/X
+ merge860/Y
+ merge861/Y
+ merge862/X
+ merge863/X
+ merge864/Q
+ merge864/Q_N
+ merge865/X
+ merge866/Q
+ merge867/Q
+ merge868/X
+ merge869/Q
+ merge870/Q
+ merge870/Q_N
+ merge871/Q
+ merge871/Q_N
+ merge872/Y
+ merge873/Q
+ merge873/Q_N
+ merge874/Q
+ merge874/Q_N
+ merge875/Q
+ merge876/Q
+ merge877/Q
+ merge878/Q
+ merge879/Q
+ merge880/Q
+ merge881/Q
+ merge881/Q_N
+ merge882/Y
+ merge883/Q
+ merge884/GCLK
+ merge885/X
+ merge886/Y
+ merge887/GCLK
+ merge888/Y
+ merge889/GCLK
+ merge890/Q
+ merge890/Q_N
+ merge891/Y
+ merge892/X
+ merge893/Q
+ merge893/Q_N
+ merge894/Q
+ merge895/Q
+ merge896/Q
+ merge897/X
+ merge898/Q
+ merge899/Q
+ merge899/Q_N
+ merge900/Q
+ merge900/Q_N
+ merge901/Q
+ merge902/Q
+ merge903/Q
+ merge904/Q
+ merge904/Q_N
+ merge905/Q
+ merge905/Q_N
+ merge906/Q
+ merge906/Q_N
+ merge907/Q
+ merge907/Q_N
+ merge908/Q
+ merge909/Q
+ merge910/Q
+ merge911/Q
+ merge912/Q
+ merge913/Q
+ merge914/Q
+ merge914/Q_N
+ merge915/Q
+ merge916/GCLK
+ merge917/GCLK
+ merge918/GCLK
+ merge919/Q
+ merge919/Q_N
+ merge920/Q
+ merge920/Q_N
+ s921/Q
+ s921/Q_N
+ s922/Q
+ s922/Q_N
+ s923/Q
+ s924/Q
+ s925/Q
+ s926/GCLK
+ s927/GCLK
+ s928/GCLK
+ s929/Q
+ s929/Q_N
+ s930/Q
+ s930/Q_N
+ s931/Q
+ s931/Q_N
+ s932/Q
+ s933/Q
+ s934/Q
+ s935/Q
+ s936/Q
+ s937/Q
+ s937/Q_N
+ s938/Q
+ s938/Q_N
+ s939/Q
+ s940/Q
+ s941/Q
+ s942/GCLK
+ s943/GCLK
+ s944/GCLK
+ s945/Q
+ s945/Q_N
+ s946/Q
+ s946/Q_N
+ s947/Q
+ s947/Q_N
+ s948/Q
+ s949/Q
+ s950/Q
+ s951/Q
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 30
+max fanout violation count 21
+max cap violation count 0
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================
+Warning: There are 6 unconstrained endpoints.
+  out36
+  out40
+  out51
+  out6
+  out61
+  merge880/D

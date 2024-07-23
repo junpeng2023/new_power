@@ -1,0 +1,884 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= nom_tt_025C_1v80 Corner ===================================
+
+Startpoint: merge869 (negative level-sensitive latch clocked by clk)
+Endpoint: merge928 (recovery check against rising-edge clock clk)
+Path Group: asynchronous
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                                  4.000000    4.000000   clock clk (fall edge)
+                                  0.000000    4.000000   clock source latency
+   183    0.360358    0.764993    0.584043    4.584043 v clk (in)
+                                                         clk (net)
+                      0.764993    0.000000    4.584043 v merge869/GATE_N (sky130_fd_sc_hd__dlrtn_1)
+                                  4.406400    8.990442   time given to startpoint
+                      0.042481    0.000000    8.990442 ^ merge869/D (sky130_fd_sc_hd__dlrtn_1)
+     4    0.016476    0.166091    0.435459    9.425901 ^ merge869/Q (sky130_fd_sc_hd__dlrtn_1)
+                                                         net748 (net)
+                      0.166091    0.000270    9.426171 ^ c252/A (sky130_fd_sc_hd__dlygate4sd3_1)
+     7    0.032698    0.326427    0.775109   10.201280 ^ c252/X (sky130_fd_sc_hd__dlygate4sd3_1)
+                                                         net176 (net)
+                      0.326427    0.001234   10.202514 ^ c260/C (sky130_fd_sc_hd__nand3_4)
+     2    0.034880    0.149348    0.180981   10.383495 v c260/Y (sky130_fd_sc_hd__nand3_4)
+                                                         out36 (net)
+                      0.149348    0.000000   10.383495 v c392/A3 (sky130_fd_sc_hd__mux4_1)
+     3    0.036813    0.248984    0.705472   11.088967 v c392/X (sky130_fd_sc_hd__mux4_1)
+                                                         out32 (net)
+                      0.248984    0.000000   11.088967 v c393/A3 (sky130_fd_sc_hd__mux4_4)
+     1    0.008417    0.123014    0.684761   11.773728 v c393/X (sky130_fd_sc_hd__mux4_4)
+                                                         net297 (net)
+                      0.123014    0.000000   11.773728 v merge837/B (sky130_fd_sc_hd__nand2b_4)
+     1    0.003419    0.048536    0.091425   11.865152 ^ merge837/Y (sky130_fd_sc_hd__nand2b_4)
+                                                         net711 (net)
+                      0.048536    0.000000   11.865152 ^ merge928/SET_B (sky130_fd_sc_hd__dfstp_4)
+                                             11.865152   data arrival time
+
+                                  8.000000    8.000000   clock clk (rise edge)
+                                  0.000000    8.000000   clock source latency
+   183    0.394055    1.769182    1.208358    9.208358 ^ clk (in)
+                                                         clk (net)
+                      1.769182    0.000000    9.208358 ^ merge928/CLK (sky130_fd_sc_hd__dfstp_4)
+                                 -0.250000    8.958358   clock uncertainty
+                                  0.000000    8.958358   clock reconvergence pessimism
+                                  0.399795    9.358152   library recovery time
+                                              9.358152   data required time
+---------------------------------------------------------------------------------------------
+                                              9.358152   data required time
+                                            -11.865152   data arrival time
+---------------------------------------------------------------------------------------------
+                                             -2.507000   slack (VIOLATED)
+
+
+Startpoint: s942 (negative level-sensitive latch clocked by clk)
+Endpoint: c493 (rising edge-triggered flip-flop clocked by clk')
+Path Group: clk
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                                  4.000000    4.000000   clock clk (fall edge)
+                                  0.000000    4.000000   clock source latency
+   183    0.360358    0.764993    0.584043    4.584043 v clk (in)
+                                                         clk (net)
+                      0.764993    0.000000    4.584043 v s942/GATE_N (sky130_fd_sc_hd__dlxbn_2)
+                                  4.179503    8.763546   time given to startpoint
+                      0.075155    0.000000    8.763546 v s942/D (sky130_fd_sc_hd__dlxbn_2)
+     5    0.028702    0.079118    0.488621    9.252167 v s942/Q_N (sky130_fd_sc_hd__dlxbn_2)
+                                                         net832 (net)
+                      0.079118    0.000726    9.252892 v c228/S1 (sky130_fd_sc_hd__mux4_1)
+    10    0.061297    0.581677    0.604155    9.857047 ^ c228/X (sky130_fd_sc_hd__mux4_1)
+                                                         out15 (net)
+                      0.581677    0.000000    9.857047 ^ c493/RESET_B (sky130_fd_sc_hd__sdfbbn_1)
+                                              9.857047   data arrival time
+
+                                  0.000000    0.000000   clock clk' (rise edge)
+                                  0.000000    0.000000   clock source latency
+   183    0.360358    0.764993    0.584043    4.584043 v clk (in)
+                                                         clk (net)
+                      0.764993    0.000000    4.584043 v s940/CLK (sky130_fd_sc_hd__dlclkp_4)
+     7    0.023887    0.070011    0.499876    5.083918 v s940/GCLK (sky130_fd_sc_hd__dlclkp_4)
+                                                         net829 (net)
+                      0.070011    0.000000    5.083918 v c285/S1 (sky130_fd_sc_hd__mux4_4)
+    12    0.037830    0.152794    0.380224    5.464142 ^ c285/X (sky130_fd_sc_hd__mux4_4)
+                                                         net204 (net)
+                      0.152794    0.000000    5.464142 ^ c493/SET_B (sky130_fd_sc_hd__sdfbbn_1)
+                                 -0.250000    1.214142   clock uncertainty
+                                  0.000000    1.214142   clock reconvergence pessimism
+                                  0.095061    1.309203   library non-sequential setup time
+                                              1.309203   data required time
+---------------------------------------------------------------------------------------------
+                                              1.309203   data required time
+                                             -9.857047   data arrival time
+---------------------------------------------------------------------------------------------
+                                             -8.547845   slack (VIOLATED)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= nom_tt_025C_1v80 Corner ===================================
+
+Startpoint: merge869 (negative level-sensitive latch clocked by clk)
+Endpoint: merge928 (recovery check against rising-edge clock clk)
+Path Group: asynchronous
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                                  4.000000    4.000000   clock clk (fall edge)
+                                  0.000000    4.000000   clock source latency
+   183    0.360358    0.764993    0.584043    4.584043 v clk (in)
+                                                         clk (net)
+                      0.764993    0.000000    4.584043 v merge869/GATE_N (sky130_fd_sc_hd__dlrtn_1)
+                                  4.406400    8.990442   time given to startpoint
+                      0.042481    0.000000    8.990442 ^ merge869/D (sky130_fd_sc_hd__dlrtn_1)
+     4    0.016476    0.166091    0.435459    9.425901 ^ merge869/Q (sky130_fd_sc_hd__dlrtn_1)
+                                                         net748 (net)
+                      0.166091    0.000270    9.426171 ^ c252/A (sky130_fd_sc_hd__dlygate4sd3_1)
+     7    0.032698    0.326427    0.775109   10.201280 ^ c252/X (sky130_fd_sc_hd__dlygate4sd3_1)
+                                                         net176 (net)
+                      0.326427    0.001234   10.202514 ^ c260/C (sky130_fd_sc_hd__nand3_4)
+     2    0.034880    0.149348    0.180981   10.383495 v c260/Y (sky130_fd_sc_hd__nand3_4)
+                                                         out36 (net)
+                      0.149348    0.000000   10.383495 v c392/A3 (sky130_fd_sc_hd__mux4_1)
+     3    0.036813    0.248984    0.705472   11.088967 v c392/X (sky130_fd_sc_hd__mux4_1)
+                                                         out32 (net)
+                      0.248984    0.000000   11.088967 v c393/A3 (sky130_fd_sc_hd__mux4_4)
+     1    0.008417    0.123014    0.684761   11.773728 v c393/X (sky130_fd_sc_hd__mux4_4)
+                                                         net297 (net)
+                      0.123014    0.000000   11.773728 v merge837/B (sky130_fd_sc_hd__nand2b_4)
+     1    0.003419    0.048536    0.091425   11.865152 ^ merge837/Y (sky130_fd_sc_hd__nand2b_4)
+                                                         net711 (net)
+                      0.048536    0.000000   11.865152 ^ merge928/SET_B (sky130_fd_sc_hd__dfstp_4)
+                                             11.865152   data arrival time
+
+                                  8.000000    8.000000   clock clk (rise edge)
+                                  0.000000    8.000000   clock source latency
+   183    0.394055    1.769182    1.208358    9.208358 ^ clk (in)
+                                                         clk (net)
+                      1.769182    0.000000    9.208358 ^ merge928/CLK (sky130_fd_sc_hd__dfstp_4)
+                                 -0.250000    8.958358   clock uncertainty
+                                  0.000000    8.958358   clock reconvergence pessimism
+                                  0.399795    9.358152   library recovery time
+                                              9.358152   data required time
+---------------------------------------------------------------------------------------------
+                                              9.358152   data required time
+                                            -11.865152   data arrival time
+---------------------------------------------------------------------------------------------
+                                             -2.507000   slack (VIOLATED)
+
+
+Startpoint: s942 (negative level-sensitive latch clocked by clk)
+Endpoint: c493 (rising edge-triggered flip-flop clocked by clk')
+Path Group: clk
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                                  4.000000    4.000000   clock clk (fall edge)
+                                  0.000000    4.000000   clock source latency
+   183    0.360358    0.764993    0.584043    4.584043 v clk (in)
+                                                         clk (net)
+                      0.764993    0.000000    4.584043 v s942/GATE_N (sky130_fd_sc_hd__dlxbn_2)
+                                  4.179503    8.763546   time given to startpoint
+                      0.075155    0.000000    8.763546 v s942/D (sky130_fd_sc_hd__dlxbn_2)
+     5    0.028702    0.079118    0.488621    9.252167 v s942/Q_N (sky130_fd_sc_hd__dlxbn_2)
+                                                         net832 (net)
+                      0.079118    0.000726    9.252892 v c228/S1 (sky130_fd_sc_hd__mux4_1)
+    10    0.061297    0.581677    0.604155    9.857047 ^ c228/X (sky130_fd_sc_hd__mux4_1)
+                                                         out15 (net)
+                      0.581677    0.000000    9.857047 ^ c493/RESET_B (sky130_fd_sc_hd__sdfbbn_1)
+                                              9.857047   data arrival time
+
+                                  0.000000    0.000000   clock clk' (rise edge)
+                                  0.000000    0.000000   clock source latency
+   183    0.360358    0.764993    0.584043    4.584043 v clk (in)
+                                                         clk (net)
+                      0.764993    0.000000    4.584043 v s940/CLK (sky130_fd_sc_hd__dlclkp_4)
+     7    0.023887    0.070011    0.499876    5.083918 v s940/GCLK (sky130_fd_sc_hd__dlclkp_4)
+                                                         net829 (net)
+                      0.070011    0.000000    5.083918 v c285/S1 (sky130_fd_sc_hd__mux4_4)
+    12    0.037830    0.152794    0.380224    5.464142 ^ c285/X (sky130_fd_sc_hd__mux4_4)
+                                                         net204 (net)
+                      0.152794    0.000000    5.464142 ^ c493/SET_B (sky130_fd_sc_hd__sdfbbn_1)
+                                 -0.250000    1.214142   clock uncertainty
+                                  0.000000    1.214142   clock reconvergence pessimism
+                                  0.095061    1.309203   library non-sequential setup time
+                                              1.309203   data required time
+---------------------------------------------------------------------------------------------
+                                              1.309203   data required time
+                                             -9.857047   data arrival time
+---------------------------------------------------------------------------------------------
+                                             -8.547845   slack (VIOLATED)
+
+
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= nom_tt_025C_1v80 Corner ===================================
+
+max slew
+
+Pin                                        Limit        Slew       Slack
+------------------------------------------------------------------------
+clk                                     0.750000    1.769182   -1.019182 (VIOLATED)
+c104/CLK_N                              0.750000    1.769182   -1.019182 (VIOLATED)
+c108/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+c128/CLK_N                              0.750000    1.769182   -1.019182 (VIOLATED)
+c131/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+c162/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+c191/CLK_N                              0.750000    1.769182   -1.019182 (VIOLATED)
+c213/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+c226/CLK_N                              0.750000    1.769182   -1.019182 (VIOLATED)
+c231/CLK_N                              0.750000    1.769182   -1.019182 (VIOLATED)
+c235/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+c279/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+c292/CLK_N                              0.750000    1.769182   -1.019182 (VIOLATED)
+c295/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+c301/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+c303/CLK_N                              0.750000    1.769182   -1.019182 (VIOLATED)
+c334/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+c342/CLK_N                              0.750000    1.769182   -1.019182 (VIOLATED)
+c343/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+c344/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+c356/CLK_N                              0.750000    1.769182   -1.019182 (VIOLATED)
+c360/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+c369/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+c370/CLK_N                              0.750000    1.769182   -1.019182 (VIOLATED)
+c372/CLK_N                              0.750000    1.769182   -1.019182 (VIOLATED)
+c412/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+c414/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+c416/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+c417/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+c429/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+c435/CLK_N                              0.750000    1.769182   -1.019182 (VIOLATED)
+c449/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+c454/CLK_N                              0.750000    1.769182   -1.019182 (VIOLATED)
+c485/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+c493/CLK_N                              0.750000    1.769182   -1.019182 (VIOLATED)
+c497/CLK_N                              0.750000    1.769182   -1.019182 (VIOLATED)
+c502/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+c555/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+c559/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+c577/CLK_N                              0.750000    1.769182   -1.019182 (VIOLATED)
+c578/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+c581/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+c584/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+c590/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+c608/CLK_N                              0.750000    1.769182   -1.019182 (VIOLATED)
+c678/CLK_N                              0.750000    1.769182   -1.019182 (VIOLATED)
+c694/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+c696/CLK_N                              0.750000    1.769182   -1.019182 (VIOLATED)
+c704/CLK_N                              0.750000    1.769182   -1.019182 (VIOLATED)
+c706/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+c707/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+c708/CLK_N                              0.750000    1.769182   -1.019182 (VIOLATED)
+c711/CLK_N                              0.750000    1.769182   -1.019182 (VIOLATED)
+c725/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+c83/CLK                                 0.750000    1.769182   -1.019182 (VIOLATED)
+merge797/CLK                            0.750000    1.769182   -1.019182 (VIOLATED)
+merge831/CLK                            0.750000    1.769182   -1.019182 (VIOLATED)
+merge833/CLK                            0.750000    1.769182   -1.019182 (VIOLATED)
+merge836/CLK_N                          0.750000    1.769182   -1.019182 (VIOLATED)
+merge838/CLK                            0.750000    1.769182   -1.019182 (VIOLATED)
+merge840/CLK                            0.750000    1.769182   -1.019182 (VIOLATED)
+merge844/CLK                            0.750000    1.769182   -1.019182 (VIOLATED)
+merge848/CLK                            0.750000    1.769182   -1.019182 (VIOLATED)
+merge849/CLK                            0.750000    1.769182   -1.019182 (VIOLATED)
+merge850/CLK                            0.750000    1.769182   -1.019182 (VIOLATED)
+merge851/CLK                            0.750000    1.769182   -1.019182 (VIOLATED)
+merge852/CLK                            0.750000    1.769182   -1.019182 (VIOLATED)
+merge858/GATE_N                         0.750000    1.769182   -1.019182 (VIOLATED)
+merge859/GATE_N                         0.750000    1.769182   -1.019182 (VIOLATED)
+merge866/GATE                           0.750000    1.769182   -1.019182 (VIOLATED)
+merge868/GATE                           0.750000    1.769182   -1.019182 (VIOLATED)
+merge869/GATE_N                         0.750000    1.769182   -1.019182 (VIOLATED)
+merge870/GATE_N                         0.750000    1.769182   -1.019182 (VIOLATED)
+merge871/GATE_N                         0.750000    1.769182   -1.019182 (VIOLATED)
+merge873/GATE                           0.750000    1.769182   -1.019182 (VIOLATED)
+merge877/GATE                           0.750000    1.769182   -1.019182 (VIOLATED)
+merge878/GATE                           0.750000    1.769182   -1.019182 (VIOLATED)
+merge881/CLK                            0.750000    1.769182   -1.019182 (VIOLATED)
+merge882/CLK                            0.750000    1.769182   -1.019182 (VIOLATED)
+merge883/CLK                            0.750000    1.769182   -1.019182 (VIOLATED)
+merge887/CLK                            0.750000    1.769182   -1.019182 (VIOLATED)
+merge888/CLK                            0.750000    1.769182   -1.019182 (VIOLATED)
+merge889/CLK                            0.750000    1.769182   -1.019182 (VIOLATED)
+merge890/CLK                            0.750000    1.769182   -1.019182 (VIOLATED)
+merge891/CLK_N                          0.750000    1.769182   -1.019182 (VIOLATED)
+merge892/CLK                            0.750000    1.769182   -1.019182 (VIOLATED)
+merge893/CLK                            0.750000    1.769182   -1.019182 (VIOLATED)
+merge895/CLK                            0.750000    1.769182   -1.019182 (VIOLATED)
+merge898/CLK                            0.750000    1.769182   -1.019182 (VIOLATED)
+merge899/CLK                            0.750000    1.769182   -1.019182 (VIOLATED)
+merge900/CLK                            0.750000    1.769182   -1.019182 (VIOLATED)
+merge901/CLK                            0.750000    1.769182   -1.019182 (VIOLATED)
+merge902/CLK                            0.750000    1.769182   -1.019182 (VIOLATED)
+merge903/GATE_N                         0.750000    1.769182   -1.019182 (VIOLATED)
+merge904/GATE_N                         0.750000    1.769182   -1.019182 (VIOLATED)
+merge905/GATE                           0.750000    1.769182   -1.019182 (VIOLATED)
+merge906/GATE                           0.750000    1.769182   -1.019182 (VIOLATED)
+merge907/GATE_N                         0.750000    1.769182   -1.019182 (VIOLATED)
+merge908/GATE_N                         0.750000    1.769182   -1.019182 (VIOLATED)
+merge909/GATE_N                         0.750000    1.769182   -1.019182 (VIOLATED)
+merge910/GATE                           0.750000    1.769182   -1.019182 (VIOLATED)
+merge911/GATE                           0.750000    1.769182   -1.019182 (VIOLATED)
+merge912/GATE                           0.750000    1.769182   -1.019182 (VIOLATED)
+merge913/CLK                            0.750000    1.769182   -1.019182 (VIOLATED)
+merge914/CLK                            0.750000    1.769182   -1.019182 (VIOLATED)
+merge915/CLK                            0.750000    1.769182   -1.019182 (VIOLATED)
+merge916/CLK                            0.750000    1.769182   -1.019182 (VIOLATED)
+merge917/CLK                            0.750000    1.769182   -1.019182 (VIOLATED)
+merge918/CLK                            0.750000    1.769182   -1.019182 (VIOLATED)
+merge919/CLK                            0.750000    1.769182   -1.019182 (VIOLATED)
+merge920/CLK_N                          0.750000    1.769182   -1.019182 (VIOLATED)
+merge921/CLK                            0.750000    1.769182   -1.019182 (VIOLATED)
+merge922/CLK                            0.750000    1.769182   -1.019182 (VIOLATED)
+merge923/CLK                            0.750000    1.769182   -1.019182 (VIOLATED)
+merge924/CLK                            0.750000    1.769182   -1.019182 (VIOLATED)
+merge925/CLK                            0.750000    1.769182   -1.019182 (VIOLATED)
+merge926/CLK                            0.750000    1.769182   -1.019182 (VIOLATED)
+merge927/CLK                            0.750000    1.769182   -1.019182 (VIOLATED)
+merge928/CLK                            0.750000    1.769182   -1.019182 (VIOLATED)
+merge929/GATE_N                         0.750000    1.769182   -1.019182 (VIOLATED)
+merge930/GATE_N                         0.750000    1.769182   -1.019182 (VIOLATED)
+merge931/GATE                           0.750000    1.769182   -1.019182 (VIOLATED)
+merge932/GATE                           0.750000    1.769182   -1.019182 (VIOLATED)
+s933/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+s934/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+s935/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+s936/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+s937/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+s938/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+s939/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+s940/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+s941/GATE_N                             0.750000    1.769182   -1.019182 (VIOLATED)
+s942/GATE_N                             0.750000    1.769182   -1.019182 (VIOLATED)
+s943/GATE                               0.750000    1.769182   -1.019182 (VIOLATED)
+s944/GATE_N                             0.750000    1.769182   -1.019182 (VIOLATED)
+s945/GATE_N                             0.750000    1.769182   -1.019182 (VIOLATED)
+s946/GATE_N                             0.750000    1.769182   -1.019182 (VIOLATED)
+s947/GATE                               0.750000    1.769182   -1.019182 (VIOLATED)
+s948/SLEEP_B                            0.750000    1.769182   -1.019182 (VIOLATED)
+s949/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+s950/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+s951/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+s952/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+s953/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+s954/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+s955/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+s956/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+s957/GATE_N                             0.750000    1.769182   -1.019182 (VIOLATED)
+s958/GATE_N                             0.750000    1.769182   -1.019182 (VIOLATED)
+s959/GATE                               0.750000    1.769182   -1.019182 (VIOLATED)
+s960/GATE_N                             0.750000    1.769182   -1.019182 (VIOLATED)
+s961/GATE_N                             0.750000    1.769182   -1.019182 (VIOLATED)
+s962/GATE_N                             0.750000    1.769182   -1.019182 (VIOLATED)
+s963/GATE                               0.750000    1.769182   -1.019182 (VIOLATED)
+s964/SLEEP_B                            0.750000    1.769182   -1.019182 (VIOLATED)
+s965/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+s966/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+s967/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+s968/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+s969/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+s970/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+s971/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+s972/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+s973/GATE_N                             0.750000    1.769182   -1.019182 (VIOLATED)
+s974/GATE_N                             0.750000    1.769182   -1.019182 (VIOLATED)
+s975/GATE                               0.750000    1.769182   -1.019182 (VIOLATED)
+s976/GATE_N                             0.750000    1.769182   -1.019182 (VIOLATED)
+s977/GATE_N                             0.750000    1.769182   -1.019182 (VIOLATED)
+s978/GATE_N                             0.750000    1.769182   -1.019182 (VIOLATED)
+s979/GATE                               0.750000    1.769182   -1.019182 (VIOLATED)
+s980/SLEEP_B                            0.750000    1.769182   -1.019182 (VIOLATED)
+s981/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+s982/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+s983/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+s984/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+s985/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+s986/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+s987/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+s988/CLK                                0.750000    1.769182   -1.019182 (VIOLATED)
+s989/GATE_N                             0.750000    1.769182   -1.019182 (VIOLATED)
+s990/GATE_N                             0.750000    1.769182   -1.019182 (VIOLATED)
+s991/GATE                               0.750000    1.769182   -1.019182 (VIOLATED)
+s992/GATE_N                             0.750000    1.769182   -1.019182 (VIOLATED)
+s993/GATE_N                             0.750000    1.769182   -1.019182 (VIOLATED)
+out27                                   0.750000    1.571792   -0.821792 (VIOLATED)
+c498/Y                                  0.750000    1.571792   -0.821792 (VIOLATED)
+c355/A1                                 0.750000    1.512493   -0.762493 (VIOLATED)
+c359/A                                  0.750000    1.512493   -0.762493 (VIOLATED)
+c361/A1                                 0.750000    1.512493   -0.762493 (VIOLATED)
+c356/SCE                                0.750000    1.512491   -0.762491 (VIOLATED)
+c349/S1                                 0.750000    1.512491   -0.762491 (VIOLATED)
+c179/Y                                  0.750000    1.512487   -0.762487 (VIOLATED)
+c180/B1                                 0.750000    1.512487   -0.762487 (VIOLATED)
+c182/B                                  0.750000    1.512487   -0.762487 (VIOLATED)
+c194/D1                                 0.750000    1.512487   -0.762487 (VIOLATED)
+c195/A3                                 0.750000    1.512487   -0.762487 (VIOLATED)
+c232/B                                  0.750000    1.512487   -0.762487 (VIOLATED)
+c313/B                                  0.750000    1.512487   -0.762487 (VIOLATED)
+c664/A                                  0.750000    1.432226   -0.682226 (VIOLATED)
+c738/A3                                 0.750000    1.432226   -0.682226 (VIOLATED)
+c716/A3                                 0.750000    1.432224   -0.682224 (VIOLATED)
+c712/S1                                 0.750000    1.432221   -0.682221 (VIOLATED)
+c270/B_N                                0.750000    1.432216   -0.682216 (VIOLATED)
+c681/C1                                 0.750000    1.432213   -0.682213 (VIOLATED)
+c547/A1                                 0.750000    1.432200   -0.682200 (VIOLATED)
+c609/A1                                 0.750000    1.432200   -0.682200 (VIOLATED)
+c459/A0                                 0.750000    1.432198   -0.682198 (VIOLATED)
+c340/A                                  0.750000    1.432196   -0.682196 (VIOLATED)
+c281/S1                                 0.750000    1.432193   -0.682193 (VIOLATED)
+c266/Y                                  0.750000    1.432191   -0.682191 (VIOLATED)
+c273/D_N                                0.750000    1.432191   -0.682191 (VIOLATED)
+c274/C_N                                0.750000    1.432191   -0.682191 (VIOLATED)
+c276/C_N                                0.750000    1.432191   -0.682191 (VIOLATED)
+c278/A1                                 0.750000    1.432191   -0.682191 (VIOLATED)
+c530/A                                  0.750000    1.432191   -0.682191 (VIOLATED)
+c245/B                                  0.750000    1.325997   -0.575997 (VIOLATED)
+c241/S0                                 0.750000    1.325996   -0.575996 (VIOLATED)
+c627/A2                                 0.750000    1.325993   -0.575993 (VIOLATED)
+c357/B1                                 0.750000    1.325982   -0.575982 (VIOLATED)
+c483/S0                                 0.750000    1.325968   -0.575968 (VIOLATED)
+c333/S0                                 0.750000    1.325940   -0.575940 (VIOLATED)
+c718/S0                                 0.750000    1.325935   -0.575935 (VIOLATED)
+c717/S0                                 0.750000    1.325934   -0.575934 (VIOLATED)
+c270/A                                  0.750000    1.325916   -0.575916 (VIOLATED)
+merge787/D1                             0.750000    1.325906   -0.575906 (VIOLATED)
+c414/SCE                                0.750000    1.325889   -0.575889 (VIOLATED)
+c436/S0                                 0.750000    1.325890   -0.575890 (VIOLATED)
+merge816/A2                             0.750000    1.325888   -0.575888 (VIOLATED)
+c405/C                                  0.750000    1.325886   -0.575886 (VIOLATED)
+c273/C_N                                0.750000    1.325874   -0.575874 (VIOLATED)
+c285/A3                                 0.750000    1.325874   -0.575874 (VIOLATED)
+c404/B                                  0.750000    1.325873   -0.575873 (VIOLATED)
+c529/B                                  0.750000    1.325861   -0.575861 (VIOLATED)
+c402/B                                  0.750000    1.325854   -0.575854 (VIOLATED)
+c274/B                                  0.750000    1.325852   -0.575852 (VIOLATED)
+merge823/A3                             0.750000    1.325853   -0.575853 (VIOLATED)
+c278/S0                                 0.750000    1.325851   -0.575851 (VIOLATED)
+merge785/D_N                            0.750000    1.325846   -0.575846 (VIOLATED)
+c279/SCD                                0.750000    1.325838   -0.575838 (VIOLATED)
+out7                                    0.750000    1.325833   -0.575833 (VIOLATED)
+c149/Y                                  0.750000    1.325830   -0.575830 (VIOLATED)
+c150/A3                                 0.750000    1.325830   -0.575830 (VIOLATED)
+c151/A3                                 0.750000    1.325830   -0.575830 (VIOLATED)
+c152/A2                                 0.750000    1.325830   -0.575830 (VIOLATED)
+c162/SCE                                0.750000    1.325830   -0.575830 (VIOLATED)
+c413/Y                                  0.750000    1.082753   -0.332753 (VIOLATED)
+c414/RESET_B                            0.750000    1.082753   -0.332753 (VIOLATED)
+c415/A1                                 0.750000    1.082753   -0.332753 (VIOLATED)
+c422/A2                                 0.750000    1.082753   -0.332753 (VIOLATED)
+c437/A3                                 0.750000    1.082753   -0.332753 (VIOLATED)
+c538/B1                                 0.750000    1.082753   -0.332753 (VIOLATED)
+c555/D                                  0.750000    1.082753   -0.332753 (VIOLATED)
+c559/SCD                                0.750000    1.082753   -0.332753 (VIOLATED)
+c569/A2                                 0.750000    1.082753   -0.332753 (VIOLATED)
+merge777/B1                             0.750000    1.082753   -0.332753 (VIOLATED)
+out31                                   0.750000    1.060021   -0.310021 (VIOLATED)
+c496/Y                                  0.750000    1.060019   -0.310019 (VIOLATED)
+c497/RESET_B                            0.750000    1.060019   -0.310019 (VIOLATED)
+c191/RESET_B                            0.750000    1.025047   -0.275047 (VIOLATED)
+c311/A                                  0.750000    1.025047   -0.275047 (VIOLATED)
+c62/S1                                  0.750000    1.025047   -0.275047 (VIOLATED)
+c64/S1                                  0.750000    1.025047   -0.275047 (VIOLATED)
+c65/Y                                   0.750000    1.025047   -0.275047 (VIOLATED)
+c484/Y                                  0.750000    0.848769   -0.098769 (VIOLATED)
+c487/A2                                 0.750000    0.848769   -0.098769 (VIOLATED)
+c495/A0                                 0.750000    0.848769   -0.098769 (VIOLATED)
+c496/A1                                 0.750000    0.848769   -0.098769 (VIOLATED)
+c373/S0                                 0.750000    0.802732   -0.052732 (VIOLATED)
+c357/A1                                 0.750000    0.802732   -0.052732 (VIOLATED)
+c364/B1                                 0.750000    0.802731   -0.052731 (VIOLATED)
+c370/SCE                                0.750000    0.802731   -0.052731 (VIOLATED)
+c367/B1                                 0.750000    0.802731   -0.052731 (VIOLATED)
+c353/A                                  0.750000    0.802730   -0.052730 (VIOLATED)
+c362/B1                                 0.750000    0.802729   -0.052729 (VIOLATED)
+c226/SCE                                0.750000    0.802727   -0.052727 (VIOLATED)
+c217/Y                                  0.750000    0.802725   -0.052725 (VIOLATED)
+c219/C1                                 0.750000    0.802725   -0.052725 (VIOLATED)
+c231/SET_B                              0.750000    0.802725   -0.052725 (VIOLATED)
+out60                                   0.750000    0.773810   -0.023810 (VIOLATED)
+c354/Y                                  0.750000    0.773800   -0.023800 (VIOLATED)
+c356/RESET_B                            0.750000    0.773800   -0.023800 (VIOLATED)
+c364/A2                                 0.750000    0.773800   -0.023800 (VIOLATED)
+c624/A0                                 0.750000    0.762800   -0.012800 (VIOLATED)
+c626/S0                                 0.750000    0.762800   -0.012800 (VIOLATED)
+c502/SCE                                0.750000    0.762798   -0.012798 (VIOLATED)
+c621/A1                                 0.750000    0.762793   -0.012793 (VIOLATED)
+c607/A2                                 0.750000    0.762788   -0.012788 (VIOLATED)
+c262/A2                                 0.750000    0.762779   -0.012779 (VIOLATED)
+merge765/B                              0.750000    0.762779   -0.012779 (VIOLATED)
+c116/A                                  0.750000    0.762778   -0.012779 (VIOLATED)
+c85/S1                                  0.750000    0.762774   -0.012774 (VIOLATED)
+c70/D1                                  0.750000    0.762774   -0.012774 (VIOLATED)
+c75/C                                   0.750000    0.762774   -0.012774 (VIOLATED)
+merge798/A3                             0.750000    0.762774   -0.012774 (VIOLATED)
+c204/B                                  0.750000    0.762773   -0.012773 (VIOLATED)
+c67/Y                                   0.750000    0.762773   -0.012773 (VIOLATED)
+
+max fanout
+
+Pin                                   Limit Fanout  Slack
+---------------------------------------------------------
+clk                                      10    183   -173 (VIOLATED)
+c406/X                                   10     31    -21 (VIOLATED)
+c149/Y                                   10     28    -18 (VIOLATED)
+c446/X                                   10     20    -10 (VIOLATED)
+c322/Y                                   10     18     -8 (VIOLATED)
+c266/Y                                   10     16     -6 (VIOLATED)
+c67/Y                                    10     13     -3 (VIOLATED)
+in25                                     10     12     -2 (VIOLATED)
+in48                                     10     12     -2 (VIOLATED)
+c285/X                                   10     12     -2 (VIOLATED)
+c287/Y                                   10     12     -2 (VIOLATED)
+c570/X                                   10     12     -2 (VIOLATED)
+c76/X                                    10     12     -2 (VIOLATED)
+s935/Q                                   10     12     -2 (VIOLATED)
+in18                                     10     11        (VIOLATED)
+c156/Y                                   10     11        (VIOLATED)
+c163/X                                   10     11        (VIOLATED)
+c179/Y                                   10     11        (VIOLATED)
+c312/X                                   10     11        (VIOLATED)
+c321/X                                   10     11        (VIOLATED)
+
+max capacitance
+
+Pin                                        Limit         Cap       Slack
+------------------------------------------------------------------------
+clk                                     0.200000    0.394055   -0.194055 (VIOLATED)
+c498/Y                                  0.031138    0.033442   -0.002304 (VIOLATED)
+c179/Y                                  0.052195    0.054143   -0.001948 (VIOLATED)
+
+
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 316 unannotated drivers.
+ clk
+ rst
+ c152/X
+ c153/X
+ c158/X
+ c164/Y
+ c167/X
+ c169/X
+ c170/X
+ c178/Y
+ c195/X
+ c207/Y
+ c209/X
+ c223/Y
+ c224/Y
+ c228/X
+ c229/X
+ c230/Y
+ c233/X
+ c234/X
+ c237/X
+ c238/X
+ c239/X
+ c240/Y
+ c244/Y
+ c250/X
+ c253/X
+ c255/Y
+ c260/Y
+ c263/X
+ c285/X
+ c298/X
+ c314/Y
+ c319/X
+ c323/Y
+ c325/X
+ c326/X
+ c327/X
+ c329/Y
+ c347/X
+ c348/X
+ c353/X
+ c355/X
+ c362/X
+ c363/X
+ c364/Y
+ c365/X
+ c366/Y
+ c367/Y
+ c392/X
+ c393/X
+ c394/X
+ c395/X
+ c397/Y
+ c399/X
+ c400/Y
+ c405/Y
+ c406/X
+ c407/X
+ c409/Y
+ c411/X
+ c413/Y
+ c415/X
+ c422/X
+ c423/X
+ c427/Y
+ c431/X
+ c432/X
+ c433/Y
+ c434/X
+ c436/X
+ c437/X
+ c438/X
+ c439/X
+ c440/X
+ c442/X
+ c443/X
+ c445/Y
+ c446/X
+ c447/X
+ c448/X
+ c450/X
+ c452/X
+ c455/X
+ c457/X
+ c458/X
+ c459/X
+ c460/X
+ c461/X
+ c464/X
+ c466/X
+ c468/X
+ c471/X
+ c475/X
+ c476/X
+ c478/X
+ c479/X
+ c480/X
+ c481/Y
+ c482/Y
+ c483/X
+ c487/Y
+ c488/X
+ c489/Y
+ c490/X
+ c491/X
+ c492/X
+ c494/X
+ c495/X
+ c498/Y
+ c499/X
+ c500/X
+ c501/X
+ c503/X
+ c504/X
+ c505/X
+ c538/X
+ c540/Y
+ c541/X
+ c544/Y
+ c547/X
+ c554/X
+ c563/X
+ c566/X
+ c569/X
+ c570/X
+ c571/X
+ c574/X
+ c576/Y
+ c579/X
+ c582/Y
+ c583/X
+ c585/Y
+ c586/X
+ c587/X
+ c588/X
+ c589/X
+ c591/X
+ c592/X
+ c593/X
+ c594/X
+ c595/Y
+ c596/X
+ c597/X
+ c598/X
+ c599/X
+ c601/X
+ c602/X
+ c603/X
+ c605/X
+ c607/X
+ c610/X
+ c611/X
+ c612/X
+ c613/X
+ c614/X
+ c616/X
+ c617/X
+ c618/X
+ c619/X
+ c620/X
+ c621/X
+ c622/X
+ c623/X
+ c624/X
+ c625/X
+ c626/X
+ c627/Y
+ c628/X
+ c629/X
+ c630/X
+ c631/X
+ c632/X
+ c633/X
+ c634/X
+ c635/X
+ c636/X
+ c637/X
+ c666/Y
+ c669/X
+ c672/X
+ c680/X
+ c681/Y
+ c683/X
+ c684/X
+ c693/Y
+ c695/X
+ c697/X
+ c698/X
+ c709/X
+ c710/X
+ c712/X
+ c713/X
+ c715/X
+ c717/X
+ c718/X
+ c720/X
+ c721/X
+ c722/X
+ c723/X
+ c724/X
+ c726/X
+ c727/X
+ c729/X
+ c730/X
+ c732/X
+ c733/X
+ c734/X
+ c735/X
+ c736/X
+ c737/X
+ c738/X
+ c739/X
+ c740/X
+ c741/X
+ c742/X
+ c743/X
+ c744/X
+ c745/X
+ c746/X
+ c747/X
+ c748/X
+ c749/X
+ c750/X
+ c751/X
+ c752/X
+ c753/X
+ c754/X
+ c755/X
+ c756/X
+ c757/X
+ c758/X
+ c759/X
+ c760/X
+ c761/X
+ c762/X
+ c763/X
+ c764/X
+ merge770/X
+ merge771/X
+ merge773/Y
+ merge774/X
+ merge775/X
+ merge777/X
+ merge778/Y
+ merge782/X
+ merge788/X
+ merge789/X
+ merge791/X
+ merge793/X
+ merge800/X
+ merge808/X
+ merge810/X
+ merge811/X
+ merge812/X
+ merge813/X
+ merge814/X
+ merge816/X
+ merge818/X
+ merge820/X
+ merge821/X
+ merge824/X
+ merge825/X
+ merge826/X
+ merge828/X
+ merge829/X
+ merge832/Y
+ merge834/X
+ merge837/Y
+ merge839/X
+ merge841/Y
+ merge842/Y
+ merge843/Y
+ merge846/X
+ merge847/Y
+ merge853/X
+ merge854/Y
+ merge855/Y
+ merge857/Y
+ merge860/Y
+ merge861/Y
+ merge862/Y
+ merge863/Y
+ merge864/X
+ merge865/Y
+ merge867/X
+ merge872/X
+ merge874/Y
+ merge875/Y
+ merge876/Y
+ merge879/Y
+ merge880/X
+ merge883/GCLK
+ merge884/X
+ merge885/X
+ merge886/Y
+ merge887/GCLK
+ merge888/GCLK
+ merge894/Y
+ merge896/Y
+ merge897/X
+ merge915/GCLK
+ merge916/GCLK
+ merge917/GCLK
+ s938/GCLK
+ s939/GCLK
+ s940/GCLK
+ s954/GCLK
+ s955/GCLK
+ s956/GCLK
+ s970/GCLK
+ s971/GCLK
+ s972/GCLK
+ s986/GCLK
+ s987/GCLK
+ s988/GCLK
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 296
+Writing metric design__max_slew_violation__count__corner:nom_tt_025C_1v80: 296
+max fanout violation count 20
+Writing metric design__max_fanout_violation__count__corner:nom_tt_025C_1v80: 20
+max cap violation count 3
+Writing metric design__max_cap_violation__count__corner:nom_tt_025C_1v80: 3
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================
+Warning: There are 5 unconstrained endpoints.
+  out0
+  out53
+  out55
+  out57
+  merge831/D
